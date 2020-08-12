@@ -1,4 +1,5 @@
 from selenium import webdriver
+import keyboard
 
 chromedriver = 'D:\Programas\ChromeDriver\chromedriver'
 driver = webdriver.Chrome(chromedriver)
@@ -13,5 +14,4 @@ user.click()
 message_box = driver.find_element_by_class_name('_3uMse')
 message_box.send_keys(message)
 
-button = driver.find_element_by_class_name('_1U1xa')
-button.click()
+
