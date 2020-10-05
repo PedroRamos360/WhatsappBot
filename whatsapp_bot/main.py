@@ -9,6 +9,7 @@ driver.get('https://web.whatsapp.com/')
 name = input("Group name: ")
 message = input("Message: ")
 when = input("Execution date (day:hour:minute:second): ")
+shutdown = input("Shutdown after execution (y/n)? ")
 
 day, hour, minute, second = when.split(":")
 
@@ -34,7 +35,8 @@ message_box.send_keys(message)
 button = driver.find_element_by_xpath("//button[@class='_1U1xa']")
 button.click()
 
-os.system("shutdown -s -t 60")
+if shutdown.lower().strip() == 'y':
+	os.system("shutdown -s -t 60")
 
 
 
